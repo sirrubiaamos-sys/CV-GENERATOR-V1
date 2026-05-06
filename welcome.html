@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Generator - Welcome Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            color: #7f8c8d;
+        }
+        
+        .welcome-section {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .welcome-section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .welcome-section p {
+            color: #34495e;
+            line-height: 1.8;
+        }
+        
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .quick-link {
+            background: white;
+            border: 2px solid #ecf0f1;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .quick-link:hover {
+            border-color: #3498db;
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .quick-link .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .quick-link h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .quick-link p {
+            color: #7f8c8d;
+            font-size: 0.95em;
+        }
+        
+        .features {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .features h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .feature {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .feature strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        .feature p {
+            color: #7f8c8d;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        .steps {
+            background: #e3f2fd;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 5px solid #2196f3;
+        }
+        
+        .steps h2 {
+            color: #1565c0;
+            margin-bottom: 20px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .step-number {
+            background: #2196f3;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-size: 1.2em;
+        }
+        
+        .step-content h3 {
+            color: #1565c0;
+            margin-bottom: 5px;
+        }
+        
+        .step-content p {
+            color: #34495e;
+        }
+        
+        .file-structure {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .file-structure h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .file-structure code {
+            color: #e74c3c;
+            font-size: 0.9em;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .tips {
+            background: #fffde7;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #fbc02d;
+            margin-bottom: 20px;
+        }
+        
+        .tips h3 {
+            color: #f57f17;
+            margin-bottom: 10px;
+        }
+        
+        .tips ul {
+            margin-left: 20px;
+        }
+        
+        .tips li {
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        footer {
+            text-align: center;
+            color: #7f8c8d;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #ecf0f1;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .quick-links {
+                grid-template-columns: 1fr;
+            }
+            
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📄 CV Generator</h1>
+            <p>Professional Resume Builder - Vanilla JavaScript Edition</p>
+        </div>
+        
+        <div class="welcome-section">
+            <h2>🎉 Welcome!</h2>
+            <p>You've successfully set up the CV Generator! This is your starting point. Below, you'll find links to the main application and helpful resources to get you started.</p>
+        </div>
+        
+        <div class="quick-links">
+            <a href="index.html" class="quick-link">
+                <div class="icon">📝</div>
+                <h3>Start Building</h3>
+                <p>Open the main CV Generator application and start creating your professional CV</p>
+            </a>
+            
+            <a href="QUICKSTART.md" class="quick-link">
+                <div class="icon">⚡</div>
+                <h3>Quick Start</h3>
+                <p>Follow step-by-step instructions to use the CV Generator</p>
+            </a>
+            
+            <a href="tips.html" class="quick-link">
+                <div class="icon">💡</div>
+                <h3>CV Tips</h3>
+                <p>Learn best practices for writing effective CVs and resumes</p>
+            </a>
+            
+            <a href="README.md" class="quick-link">
+                <div class="icon">📚</div>
+                <h3>Full Docs</h3>
+                <p>Read complete documentation and feature descriptions</p>
+            </a>
+        </div>
+        
+        <div class="steps">
+            <h2>🚀 Get Started in 3 Steps</h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Open the Application</h3>
+                    <p>Click "Start Building" above to open the CV Generator. The application opens directly in your browser - no installation needed!</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Fill in Your Information</h3>
+                    <p>Complete the form with your personal details, education, experience, skills, and certifications. Your CV updates in real-time!</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Download Your CV</h3>
+                    <p>Choose your preferred format: PDF (recommended), DOCX, or print. Your CV is ready to send to employers!</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h2>✨ Key Features</h2>
+            
+            <div class="features-grid">
+                <div class="feature">
+                    <strong>👁️ Real-Time Preview</strong>
+                    <p>See your CV update instantly as you type. Always know how your CV looks before downloading.</p>
+                </div>
+                
+                <div class="feature">
+                    <strong>📥 Multiple Formats</strong>
+                    <p>Download as PDF, DOCX, or print directly. Choose the format that works best for your needs.</p>
+                </div>
+                
+                <div class="feature">
+                    <strong>🎨 Professional Design</strong>
+                    <p>Polished, clean layout that looks great on any device. Perfect for impressing employers.</p>
+                </div>
+                
+                <div class="feature">
+                    <strong>📱 Responsive Design</strong>
+                    <p>Works seamlessly on desktop, tablet, and mobile devices. Create your CV anywhere!</p>
+                </div>
+                
+                <div class="feature">
+                    <strong>🔧 Easy to Use</strong>
+                    <p>Intuitive interface with clear instructions. No technical knowledge required!</p>
+                </div>
+                
+                <div class="feature">
+                    <strong>🔒 Your Privacy</strong>
+                    <p>All data stays in your browser. No servers, no accounts, no tracking. Completely secure.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tips">
+            <h3>💡 Pro Tips Before You Start</h3>
+            <ul>
+                <li><strong>Use Action Verbs:</strong> Start descriptions with powerful verbs like "Designed," "Led," "Achieved"</li>
+                <li><strong>Quantify Achievements:</strong> Include numbers and percentages to show impact</li>
+                <li><strong>Tailor Your CV:</strong> Customize it for each job application using keywords from the posting</li>
+                <li><strong>Proofread Carefully:</strong> Check multiple times for typos and grammar errors</li>
+                <li><strong>Keep It Concise:</strong> Aim for 1-2 pages maximum</li>
+                <li><strong>Save Regularly:</strong> Download and backup your CV in multiple formats</li>
+            </ul>
+        </div>
+        
+        <div class="file-structure">
+            <h2>📁 Project Structure</h2>
+            <pre><code>cv-generator/
+├── <strong>index.html</strong>          ← Main application (START HERE)
+├── tips.html              ← CV writing tips
+├── welcome.html           ← This file
+├── README.md              ← Full documentation
+├── QUICKSTART.md          ← Quick start guide
+├── PROJECT_SUMMARY.md     ← Project overview
+│
+├── css/
+│   └── style.css          ← All styling (1000+ lines)
+│
+├── js/
+│   ├── app.js             ← Application logic
+│   ├── preview.js         ← CV preview generator
+│   └── download.js        ← PDF/DOCX export
+│
+└── libs/
+    └── (External libraries loaded from CDN)</code></pre>
+        </div>
+        
+        <div class="grid-2">
+            <div>
+                <h3>✅ What You Need</h3>
+                <ul style="margin-left: 20px; color: #666;">
+                    <li>A modern web browser</li>
+                    <li>Your CV information ready</li>
+                    <li>About 5-10 minutes</li>
+                    <li>That's it! No installation needed</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3>🎯 What You'll Get</h3>
+                <ul style="margin-left: 20px; color: #666;">
+                    <li>Professional CV in PDF format</li>
+                    <li>Editable DOCX file</li>
+                    <li>Print-ready version</li>
+                    <li>Ready to submit to employers</li>
+                </ul>
+            </div>
+        </div>
+        
+        <button class="cta-button" onclick="window.location.href='index.html'">
+            🚀 START CREATING YOUR CV NOW
+        </button>
+        
+        <footer>
+            <p>📖 Need help? Check out the <strong>Quick Start</strong> or <strong>CV Tips</strong> sections above.</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">CV Generator | 100% Vanilla JavaScript | No Installation Required</p>
+        </footer>
+    </div>
+</body>
+</html>
