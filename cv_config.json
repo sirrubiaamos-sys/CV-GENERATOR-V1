@@ -1,0 +1,41 @@
+{
+    "colors": {
+        "primary_blue_dark": "#1e3c72",
+        "primary_blue_light": "#2a5298",
+        "accent_yellow": "#ffc107",
+        "text_white": "#ffffff",
+        "text_dark": "#333333",
+        "text_light_gray": "#666666",
+        "background_white": "#ffffff",
+        "border_gray": "#e0e0e0"
+    },
+    "fonts": {
+        "family_primary": "Arial, sans-serif",
+        "family_secondary": "Segoe UI, Tahoma, Geneva, Verdana, sans-serif",
+        "size_base": "16px",
+        "size_heading1": "2em",
+        "size_heading2": "1.5em",
+        "size_heading3": "1.2em",
+        "size_small": "0.9em",
+        "weight_normal": "400",
+        "weight_bold": "700"
+    },
+    "layout": {
+        "sidebar_width": "300px",
+        "max_width": "1400px",
+        "padding_default": "25px",
+        "cv_width": "210mm",
+        "cv_height": "297mm",
+        "profile_image_size": "150px"
+    },
+    "cv_name": {
+        "name_font_size": "2.6em",
+        "summary_font_size": "1em",
+        "summary_style": "italic"
+    },
+    "effects": {
+        "box_shadow": "0 10px 40px rgba(0, 0, 0, 0.2)",
+        "border_radius": "8px",
+        "transition": "all 0.3s ease"
+    }
+}
